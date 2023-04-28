@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ETrade.Rep.Abstracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace ETrade.UOW
 {
 	public interface IUow
 	{
+		IFoodRepos foodRepos { get; }
+
 	}
 }
