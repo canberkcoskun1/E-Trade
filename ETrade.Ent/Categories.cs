@@ -9,5 +9,9 @@ namespace ETrade.Ent
 	public class Categories : Base
 	{
         public string CategoryName { get; set; }
+		public ICollection<Foods> Foods { get; set; }
+
+
+
     }
 }

@@ -13,5 +13,7 @@ namespace ETrade.Ent
         public Guid PropertyId { get; set; }
         public string Description { get; set; }
         public string Img { get; set; }
-    }
+        public ICollection<Properties> Properties { get; set; }
+		public ICollection<Categories> Categories { get; set; }
+	}
 }
