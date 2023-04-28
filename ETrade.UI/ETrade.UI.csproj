@@ -15,4 +15,13 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ETrade.Dal\ETrade.Dal.csproj" />
+    <ProjectReference Include="..\ETrade.UOW\ETrade.UOW.csproj" />
+  </ItemGroup>
+
 </Project>
