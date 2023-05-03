@@ -18,7 +18,8 @@ builder.Services.AddScoped<IOrderRepos, OrderRepos>();
 builder.Services.AddScoped<IOrderDetailRepos, OrderDetailRepos>();
 builder.Services.AddScoped<IUserRepos, UserRepos>();
 builder.Services.AddScoped<IPropertiesRepos, PropertiesRepos>();
-builder.Services.AddScoped<FoodsModel>();
+builder.Services.AddScoped<BaseCrud>();
+builder.Services.AddScoped<CategoriesModel>();
 
 var app = builder.Build();
 

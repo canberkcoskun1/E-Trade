@@ -6,9 +6,9 @@ namespace ETrade.UI.Controllers
 {
 	public class AdminController : BaseController
 	{
-		private readonly FoodsModel model;
+		private readonly BaseCrud model;
 
-		public AdminController(IUow uow, FoodsModel model) : base(uow)
+		public AdminController(IUow uow, BaseCrud model) : base(uow)
 		{
 			this.model = model;
 		}

@@ -1,5 +1,6 @@
 ﻿using ETrade.Core;
 using ETrade.Dal;
+using ETrade.DTO;
 using ETrade.Ent;
 using ETrade.Rep.Abstracts;
 using System;
@@ -14,6 +15,15 @@ namespace ETrade.Rep.Concretes
     {
         public PropertiesRepos(Context context) : base(context)
         {
+        }
+
+        public List<PropertiesDTO> GetProperties()
+        {
+            return Set().Select(x => new PropertiesDTO
+            {
+                Id = x.Id,
+                PropertyName = x.PropertyName,
+            }).ToList();
         }
     }
 }

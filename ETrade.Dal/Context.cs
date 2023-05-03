@@ -23,7 +23,7 @@ namespace ETrade.Dal
 		public DbSet<Orders> Orders { get; set; }
 		public DbSet<Properties> Properties { get; set; }
 		public DbSet<Users> Users { get; set; }
-		//public DbSet<FoodsDTO> FoodsDTO { get; set; }
+		
 
 		// Composite Key
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
