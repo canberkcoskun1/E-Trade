@@ -13,9 +13,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ETrade.DTO\ETrade.DTO.csproj" />
     <ProjectReference Include="..\ETrade.Ent\ETrade.Ent.csproj" />
   </ItemGroup>
 

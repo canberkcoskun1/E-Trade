@@ -9,7 +9,13 @@ namespace ETrade.UOW
 {
 	public interface IUow
 	{
-		IFoodRepos foodRepos { get; }
+		public IFoodRepos foodRepos { get; }
+		public ICatRepos catRepos { get; }
+		public IOrderDetailRepos orderDetailRepos { get; }
+		public IOrderRepos orderRepos { get; }
+		public IUserRepos userRepos { get; }
+		public IPropertiesRepos propertiesRepos { get; }
+		void Commit();
 
 	}
 }

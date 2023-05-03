@@ -1,4 +1,7 @@
 using ETrade.Dal;
+using ETrade.Rep.Abstracts;
+using ETrade.Rep.Concretes;
+using ETrade.UI.Models.ViewModel;
 using ETrade.UOW;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,8 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options =>
-		options.UseSqlServer(builder.Configuration.GetConnectionString("Personel")));
+		options.UseSqlServer(builder.Configuration.GetConnectionString("ETrade")));
 builder.Services.AddScoped<IUow, Uow>();
+builder.Services.AddScoped<IFoodRepos, FoodRepos>();
+builder.Services.AddScoped<ICatRepos, CatRepos>();
+builder.Services.AddScoped<IOrderRepos, OrderRepos>();
+builder.Services.AddScoped<IOrderDetailRepos, OrderDetailRepos>();
+builder.Services.AddScoped<IUserRepos, UserRepos>();
+builder.Services.AddScoped<IPropertiesRepos, PropertiesRepos>();
+builder.Services.AddScoped<FoodsModel>();
 
 var app = builder.Build();
 

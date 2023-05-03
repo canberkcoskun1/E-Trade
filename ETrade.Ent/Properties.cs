@@ -12,6 +12,5 @@ namespace ETrade.Ent
         public decimal Price { get; set; }
         public ICollection<Foods> Foods { get; set; }
 
-
     }
 }

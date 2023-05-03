@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ETrade.Ent
+namespace ETrade.DTO
 {
-	public class Categories : Base
-	{
+    public class CategoriesDTO
+    {
+        public Guid Id { get; set; }
         public string CategoryName { get; set; }
-		public ICollection<Foods> Foods { get; set; }
-		
+        
+
     }
 }

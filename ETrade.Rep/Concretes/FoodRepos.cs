@@ -1,5 +1,6 @@
 ﻿using ETrade.Core;
 using ETrade.Dal;
+using ETrade.DTO;
 using ETrade.Ent;
 using ETrade.Rep.Abstracts;
 using System;
@@ -16,5 +17,18 @@ namespace ETrade.Rep.Concretes
 		{
 
 		}
-	}
+
+        //public List<FoodsDTO> GetFoods()
+        //{
+        //    return Set().Select(x => new FoodsDTO
+        //    {
+        //        Id = x.Id,
+        //        CategoryName = x.Categories.CategoryName,
+                
+                
+        //    }).ToList();
+        //}
+
+        
+    }
 }

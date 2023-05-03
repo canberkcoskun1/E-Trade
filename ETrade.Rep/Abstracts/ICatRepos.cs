@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace ETrade.Rep.Abstracts
 {
-	public interface IFoodRepos : IBaseRepository<Foods>
-	{
-		//List<FoodsDTO> GetFoods();
-	}
+    public interface ICatRepos : IBaseRepository<Categories>
+    {
+        List<CategoriesDTO> GetCategories();
+    }
 }

@@ -5,7 +5,7 @@ namespace ETrade.UI.Controllers
 {
 	public class BaseController : Controller
 	{
-		private  IUow Uow;
+		public IUow Uow;
 
 		public BaseController(IUow uow)
         {
