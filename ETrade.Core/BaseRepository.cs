@@ -17,6 +17,13 @@ namespace ETrade.Core
 			this.context = context;
 		}
 
+		
+		public IQueryable<T> Qry()
+		{
+			return List().AsQueryable();
+		}
+
+
 		public bool Add(T entity)
 		{
 			try

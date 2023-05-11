@@ -11,6 +11,6 @@ namespace ETrade.Rep.Abstracts
 {
 	public interface IFoodRepos : IBaseRepository<Foods>
 	{
-		//List<FoodsDTO> GetFoods();
+		List<FoodDTO> GetFoods();
 	}
 }

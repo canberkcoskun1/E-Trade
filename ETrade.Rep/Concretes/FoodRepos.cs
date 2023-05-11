@@ -18,17 +18,15 @@ namespace ETrade.Rep.Concretes
 
 		}
 
-        //public List<FoodsDTO> GetFoods()
-        //{
-        //    return Set().Select(x => new FoodsDTO
-        //    {
-        //        Id = x.Id,
-        //        CategoryName = x.Categories.CategoryName,
-                
-                
-        //    }).ToList();
-        //}
+        public List<FoodDTO> GetFoods()
+        {
+            return Set().Select(x => new FoodDTO
+            {
+                Id = x.FoodId,
+                FoodName = x.FoodName,
+            }).ToList();
+        }
 
-        
+
     }
 }

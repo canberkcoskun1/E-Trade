@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace ETrade.Ent
 {
-	public class OrderDetails
+	public class OrderDetails : Base
 	{
-		[Key]
 		public Guid OrderId { get; set; }
 		public Guid FoodId { get; set; }
 		public int Amount { get; set; }

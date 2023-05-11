@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace ETrade.Rep.Abstracts
 {
-    public interface IUserRepos : IBaseRepository<Users>
-    {
-    }
+	public interface IUserRepos : IBaseRepository<Users>
+	{
+		public bool Login();
+		public void Logout();
+		public bool Register(Users user);
+	}
 }

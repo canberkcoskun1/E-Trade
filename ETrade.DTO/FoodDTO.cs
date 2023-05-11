@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ETrade.DTO
 {
-    public class CategoriesDTO
+    public class FoodDTO
     {
         public Guid Id { get; set; }
-        public string CategoryName { get; set; }
+        public string FoodName { get; set; }
     }
 }

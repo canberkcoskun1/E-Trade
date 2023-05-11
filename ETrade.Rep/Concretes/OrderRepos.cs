@@ -15,5 +15,11 @@ namespace ETrade.Rep.Concretes
         public OrderRepos(Context context) : base(context)
         {
         }
-    }
+
+		public List<Orders> GetOrders(Guid Id)
+		{
+			// Bunu Userların siparişlerine göre ve ulaşmayan siparişlere göre listelesin.
+			return List().Where(x => x.UserId == Id && x.isDelivered == false).ToList();
+		}
+	}
 }

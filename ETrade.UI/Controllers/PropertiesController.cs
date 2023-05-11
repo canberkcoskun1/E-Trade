@@ -22,7 +22,8 @@ namespace ETrade.UI.Controllers
             model.Text = "Save";
             model.Head = "New Properties";
             model.Class = "btn btn-outline-success my-2";
-
+            //Select-option part, we need this func.
+            model.FoodDTOs = Uow.foodRepos.GetFoods();
             return View("Crud", model);
         }
         [HttpPost]

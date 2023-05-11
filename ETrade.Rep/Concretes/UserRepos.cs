@@ -16,5 +16,29 @@ namespace ETrade.Rep.Concretes
         {
 
         }
-    }
+
+		public bool Login()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Logout()
+		{
+			throw new NotImplementedException();
+		}
+
+		public bool Register(Users user)
+		{
+			try
+			{
+				Add(user);
+				return true;
+			}
+			catch (Exception)
+			{
+
+				return false;
+			}
+		}
+	}
 }

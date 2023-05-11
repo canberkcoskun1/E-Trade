@@ -21,7 +21,7 @@ namespace ETrade.Rep.Concretes
         {
             return Set().Select(x => new PropertiesDTO
             {
-                Id = x.Id,
+                Id = x.PropertyId,
                 PropertyName = x.PropertyName,
             }).ToList();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,9 @@ namespace ETrade.Ent
 {
 	public class Foods : Base
 	{
-		public string FoodName { get; set; }
-		public decimal UnitPrice { get; set; }
+		[Key]
+        public  Guid FoodId { get; set; }
+        public string FoodName { get; set; }
 		public Guid CategoryId { get; set; }
 		public string Description { get; set; }
 		public string Img { get; set; }
@@ -18,5 +20,6 @@ namespace ETrade.Ent
 		[ForeignKey(nameof(CategoryId))]
 		public Categories Categories { get; set; }
 		public ICollection<OrderDetails> OrderDetails { get; set; }
-	}
+        
+    }
 }

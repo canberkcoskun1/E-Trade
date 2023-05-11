@@ -30,7 +30,7 @@ namespace ETrade.UI.Controllers
         [HttpPost]
         public IActionResult Create(CategoriesModel model)
         {
-
+            
             Uow.catRepos.Add(model.Categories);
             Uow.Commit();
             return RedirectToAction("List");

@@ -13,9 +13,9 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Categories.Id" />
+            <input type="hidden" asp-for="Categories.CategoryId" />
             <div class="form-group">
-                <label asp-for="Categories.Id" class="control-label"></label>
+                <label asp-for="Categories.CategoryId" class="control-label"><h4>Category Name</h4></label>
                 <input asp-for="Categories.CategoryName" class="form-control" />
                 <span asp-validation-for="Categories.CategoryName" class="text-danger"></span>
             </div>
@@ -30,7 +30,7 @@
 </div>
 
 <div>
-    <a asp-action="List">Back to List</a>
+    <a asp-action="List" class="btn btn-outline-warning">Back to List</a>
 </div>
 
 @section Scripts {

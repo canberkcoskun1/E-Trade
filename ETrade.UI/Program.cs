@@ -11,15 +11,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options =>
 		options.UseSqlServer(builder.Configuration.GetConnectionString("ETrade")));
+
 builder.Services.AddScoped<IUow, Uow>();
+//Repositories
 builder.Services.AddScoped<IFoodRepos, FoodRepos>();
 builder.Services.AddScoped<ICatRepos, CatRepos>();
 builder.Services.AddScoped<IOrderRepos, OrderRepos>();
 builder.Services.AddScoped<IOrderDetailRepos, OrderDetailRepos>();
 builder.Services.AddScoped<IUserRepos, UserRepos>();
 builder.Services.AddScoped<IPropertiesRepos, PropertiesRepos>();
+//Models
 builder.Services.AddScoped<BaseCrud>();
 builder.Services.AddScoped<CategoriesModel>();
+builder.Services.AddScoped<PropertiesModel>();
+builder.Services.AddScoped<FoodsModel>();
 
 var app = builder.Build();
 
