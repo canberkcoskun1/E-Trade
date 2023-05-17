@@ -17,9 +17,27 @@ namespace ETrade.Rep.Concretes
 
         }
 
-		public bool Login()
+		public Users Login(Users user)
 		{
-			throw new NotImplementedException();
+			var dummyUser = new Users();
+			try
+			{
+
+				var loginUser = Set().FirstOrDefault(x => x.UserName == user.UserName);
+				if (loginUser != null)
+				{
+					bool verified = BCrypt.Net.BCrypt.Verify(user.Password , loginUser.Password);
+					if (verified)
+					{
+						return loginUser;
+					}
+				}
+				return dummyUser;
+			}
+			catch (Exception)
+			{
+				return dummyUser;
+			}
 		}
 
 		public void Logout()
@@ -31,7 +49,12 @@ namespace ETrade.Rep.Concretes
 		{
 			try
 			{
+				// Passwordu encrypt olarak saklar.
+				user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+				user.CreatedDate = DateTime.Now;
+				user.LastUpdated = DateTime.Now;
 				Add(user);
+
 				return true;
 			}
 			catch (Exception)

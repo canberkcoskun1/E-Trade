@@ -1,4 +1,5 @@
 using ETrade.Dal;
+using ETrade.Ent;
 using ETrade.Rep.Abstracts;
 using ETrade.Rep.Concretes;
 using ETrade.UI.Models.ViewModel;
@@ -7,8 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//Session
+builder.Services.AddSession();
+// Connection
 builder.Services.AddDbContext<Context>(options =>
 		options.UseSqlServer(builder.Configuration.GetConnectionString("ETrade")));
 
@@ -26,6 +31,12 @@ builder.Services.AddScoped<CategoriesModel>();
 builder.Services.AddScoped<PropertiesModel>();
 builder.Services.AddScoped<FoodsModel>();
 
+builder.Services.AddScoped<Users>();
+builder.Services.AddScoped<Orders>();
+builder.Services.AddScoped<OrderDetails>();
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,7 +51,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,25 +1,33 @@
-﻿@model List<ETrade.Ent.Orders>
+﻿@model List<ETrade.Ent.OrderDetails>
+
 @{
-	ViewData["Title"] = "List";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1>Order Details</h1>
+
+
+
 <table class="table">
-	
+
 	<tr>
 		<th>Id</th>
 		<th>OrderDate</th>
-		<th></th>
-		<th><a asp-controller="Orders" asp-action="Create">New Order</a></th>
-		<th></th>
+		<th>Food Name</th>
+		<th>Properties</th>
+		
 	</tr>
 	@foreach (var item in Model)
 	{
 		<tr>
 			<td>@item.OrderId</td>
 			<td>@item.CreatedDate</td>
+			<td>@item.Foods.FoodName</td>
+			<td>@item.Foods.Properties</td>
 			<td><a href="/Orders/Update/@item.OrderId">Update</a></td>
 			<td><a href="/Orders/Cancel/@item.OrderId">Cancel</a></td>
+			
 		</tr>
 	}
 </table>
